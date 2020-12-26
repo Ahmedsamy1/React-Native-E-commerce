@@ -45,7 +45,7 @@ const ThumbsScreen = () => {
           style={styles.threedots}
         />
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate("LandingScreen")}
+          onPress={() => navigation.navigate("VegatablesScreen")}
         >
           <View>
             <Image

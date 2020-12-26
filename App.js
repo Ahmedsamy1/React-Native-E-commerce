@@ -5,6 +5,7 @@ import LandingScreen from "./components/screens/LandingScreen";
 import BasketScreen from "./components/screens/BasketScreen";
 import VanScreen from "./components/screens/VanScreen";
 import ThumbsScreen from "./components/screens/ThumbsScreen";
+import VegetablesScreen from "./components/screens/VegetablesScreen";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -21,6 +22,7 @@ const StackNavigator = () => (
     <Stack.Screen name="BasketScreen" component={BasketScreen} />
     <Stack.Screen name="VanScreen" component={VanScreen} />
     <Stack.Screen name="ThumbsScreen" component={ThumbsScreen} />
+    <Stack.Screen name="VegatablesScreen" component={VegetablesScreen} />
   </Stack.Navigator>
 );
 
