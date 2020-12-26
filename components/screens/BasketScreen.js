@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
   paragraph: {
     textAlign: "center",
     paddingTop: 20,
+    lineHeight: 25
   },
   bottomRow: {
     flexDirection: "row",

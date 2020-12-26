@@ -6,12 +6,12 @@ import {
 } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
-const VanScreen = () => {
+const ThumbsScreen = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-      <Image source={require("../../assets/van.png")} style={styles.image} />
+      <Image source={require("../../assets/thumbs.png")} style={styles.image} />
       <View style={styles.textContainer}>
         <Text style={styles.header}>Lorem ipsum</Text>
         <Text style={styles.paragraph}>
@@ -24,7 +24,7 @@ const VanScreen = () => {
 
       <View style={styles.bottomRow}>
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate("BasketScreen")}
+          onPress={() => navigation.navigate("VanScreen")}
         >
           <View>
             <Image
@@ -41,22 +41,19 @@ const VanScreen = () => {
         </TouchableWithoutFeedback>
 
         <Image
-          source={require("../../assets/dotsmiddle.png")}
+          source={require("../../assets/dotsright.png")}
           style={styles.threedots}
         />
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate("ThumbsScreen")}
+          onPress={() => navigation.navigate("LandingScreen")}
         >
           <View>
             <Image
-              source={require("../../assets/circle.png")}
+              source={require("../../assets/circularbutton.png")}
               style={styles.circleRight}
             />
             <View style={styles.arrowContainer}>
-              <Image
-                source={require("../../assets/arrow.png")}
-                style={styles.arrow}
-              />
+              <Text style={styles.startedText}>Get Started</Text>
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -65,7 +62,7 @@ const VanScreen = () => {
   );
 };
 
-export default VanScreen;
+export default ThumbsScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -109,12 +106,12 @@ const styles = StyleSheet.create({
   },
   circleRight: {
     height: 50,
-    width: 50,
+    width: 103,
     resizeMode: "contain",
   },
   threedots: {
     height: 14,
-    resizeMode: "contain",
+    resizeMode: "contain"
   },
   arrowContainer: {
     position: "absolute",
@@ -123,10 +120,13 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
   arrow: {
     height: 14,
     width: 7,
   },
+  startedText: {
+    color: '#fff'
+  }
 });
