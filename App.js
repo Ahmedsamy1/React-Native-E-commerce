@@ -3,6 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import LandingScreen from "./components/screens/LandingScreen";
 import BasketScreen from "./components/screens/BasketScreen";
+import VanScreen from "./components/screens/VanScreen";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -17,6 +18,7 @@ const StackNavigator = () => (
   >
     <Stack.Screen name="LandingScreen" component={LandingScreen} />
     <Stack.Screen name="BasketScreen" component={BasketScreen} />
+    <Stack.Screen name="VanScreen" component={VanScreen} />
   </Stack.Navigator>
 );
 

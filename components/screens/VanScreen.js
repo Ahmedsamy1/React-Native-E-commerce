@@ -6,12 +6,12 @@ import {
 } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
-const BasketScreen = () => {
+const VanScreen = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-      <Image source={require("../../assets/basket.png")} style={styles.image} />
+      <Image source={require("../../assets/van.png")} style={styles.image} />
       <View style={styles.textContainer}>
         <Text style={styles.header}>Lorem ipsum</Text>
         <Text style={styles.paragraph}>
@@ -23,23 +23,30 @@ const BasketScreen = () => {
       </View>
 
       <View style={styles.bottomRow}>
-        <View>
-          <Image
-            source={require("../../assets/circle.png")}
-            style={styles.circleLeft}
-          />
-          <View style={styles.arrowContainer}>
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate("LandingScreen")}
+        >
+          <View>
             <Image
-              source={require("../../assets/arrow.png")}
-              style={styles.arrow}
+              source={require("../../assets/circle.png")}
+              style={styles.circleLeft}
             />
+            <View style={styles.arrowContainer}>
+              <Image
+                source={require("../../assets/arrowleft.png")}
+                style={styles.arrow}
+              />
+            </View>
           </View>
-        </View>
+        </TouchableWithoutFeedback>
+
         <Image
-          source={require("../../assets/threedots.png")}
+          source={require("../../assets/dotsmiddle.png")}
           style={styles.threedots}
         />
-        <TouchableWithoutFeedback onPress={() => navigation.navigate("VanScreen")}>
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate("LandingScreen")}
+        >
           <View>
             <Image
               source={require("../../assets/circle.png")}
@@ -58,7 +65,7 @@ const BasketScreen = () => {
   );
 };
 
-export default BasketScreen;
+export default VanScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -98,7 +105,6 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     resizeMode: "contain",
-    opacity: 0
   },
   circleRight: {
     height: 50,
