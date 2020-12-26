@@ -27,12 +27,16 @@ const VegetablesScreen = () => {
           />
         </View>
       </View>
-      <View>
-        <Image
-          source={require("../../assets/vegetables.png")}
-          style={styles.mainImage}
-        />
-      </View>
+      <TouchableWithoutFeedback
+        onPress={() => navigation.navigate("MeatScreen")}
+      >
+        <View>
+          <Image
+            source={require("../../assets/vegetables.png")}
+            style={styles.mainImage}
+          />
+        </View>
+      </TouchableWithoutFeedback>
       <View style={styles.threeRows}>
         <View style={styles.firstRow}>
           <Image
