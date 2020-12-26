@@ -1,7 +1,125 @@
 import React from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  TouchableNativeFeedback,
+  TouchableWithoutFeedback,
+} from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
 const BasketScreen = () => {
-  return <Text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae corporis vel alias. Labore, voluptatum at amet incidunt distinctio corporis. Suscipit illo delectus error recusandae voluptates sunt soluta iusto, earum cum quisquam atque ullam, sint et sed ex accusamus dolores aut rerum numquam! Esse dolorem quibusdam reprehenderit quis soluta maiores expedita sit. Aut possimus, aliquid nesciunt at dicta vitae non, eos sit distinctio dolores magnam illo quidem et maiores. Eius, dicta repudiandae aliquam dolore reiciendis voluptates eaque porro fuga, eveniet odit optio officia at, vitae exercitationem. Iste cum, ipsam blanditiis odio velit itaque fugiat tempora commodi laudantium nam accusamus reprehenderit quo. Enim provident veniam exercitationem ex, ut commodi, culpa architecto laboriosam impedit repellendus dignissimos sequi placeat. Ab soluta nihil quibusdam explicabo sint asperiores natus eligendi quia, quae, esse voluptate quas distinctio quos? Tempora consectetur impedit eum aspernatur quod pariatur, aliquid quasi, exercitationem, ad quidem et! Vero, alias sint at necessitatibus pariatur harum iusto veniam nemo provident, accusantium numquam et ullam accusamus mollitia fuga quaerat. Vitae officiis quidem saepe omnis obcaecati numquam dicta, nulla delectus deserunt animi! Animi voluptate sit sint minima obcaecati unde ipsum dolor fugiat qui totam, delectus aliquam ipsa voluptas perferendis rem dolore eum harum id consequuntur tempora facilis ea quae quod distinctio! Cumque error recusandae voluptatem deleniti! Nam praesentium a non adipisci illo recusandae dolor accusamus voluptatum tempore facere natus, ipsum eaque asperiores ex? Qui accusantium natus quod eaque! Nemo nesciunt delectus praesentium quasi vitae iure expedita rem corrupti sequi adipisci architecto eius dignissimos eaque velit tempore est incidunt cumque, in deleniti a maiores asperiores tempora! Velit eos veniam modi, atque assumenda quas nostrum error, deleniti ullam dicta eligendi commodi officiis sit doloremque ad laudantium quibusdam qui facilis temporibus est expedita nemo magni porro similique. Commodi at quaerat sunt. Fugit doloremque distinctio eveniet illo aspernatur quos dolorem quam.</Text>
+  const navigation = useNavigation();
+
+  return (
+    <View style={styles.container}>
+      <Image source={require("../../assets/basket.png")} style={styles.image} />
+      <View style={styles.textContainer}>
+        <Text style={styles.header}>Lorem ipsum</Text>
+        <Text style={styles.paragraph}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit atque
+          sed magni dignissimos commodi, doloremque animi. Hic suscipit repellat
+          quia magni non, odit numquam rerum ipsum perspiciatis delectus alias
+          inventore?
+        </Text>
+      </View>
+
+      <View style={styles.bottomRow}>
+        <View>
+          <Image
+            source={require("../../assets/circle.png")}
+            style={styles.circleLeft}
+          />
+          <View style={styles.arrowContainer}>
+            <Image
+              source={require("../../assets/arrow.png")}
+              style={styles.arrow}
+            />
+          </View>
+        </View>
+        <Image
+          source={require("../../assets/threedots.png")}
+          style={styles.threedots}
+        />
+        <TouchableWithoutFeedback onPress={() => navigation.navigate("LandingScreen")}>
+          <View>
+            <Image
+              source={require("../../assets/circle.png")}
+              style={styles.circleRight}
+            />
+            <View style={styles.arrowContainer}>
+              <Image
+                source={require("../../assets/arrow.png")}
+                style={styles.arrow}
+              />
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+    </View>
+  );
 };
 
 export default BasketScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingTop: 200,
+    paddingBottom: 50,
+  },
+  image: {
+    width: 180,
+    height: 180,
+    resizeMode: "contain",
+  },
+  textContainer: {
+    width: "80%",
+    textAlign: "center",
+  },
+  header: {
+    fontSize: 30,
+    textAlign: "center",
+  },
+  paragraph: {
+    textAlign: "center",
+    paddingTop: 20,
+  },
+  bottomRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    paddingLeft: 25,
+    paddingRight: 25,
+  },
+  circleLeft: {
+    height: 50,
+    width: 50,
+    resizeMode: "contain",
+    opacity: 0
+  },
+  circleRight: {
+    height: 50,
+    width: 50,
+    resizeMode: "contain",
+  },
+  threedots: {
+    height: 14,
+    resizeMode: "contain",
+  },
+  arrowContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  arrow: {
+    height: 14,
+    width: 7,
+  },
+});

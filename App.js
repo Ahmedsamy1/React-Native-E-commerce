@@ -10,16 +10,19 @@ import { NavigationContainer } from "@react-navigation/native";
 const Stack = createStackNavigator();
 
 const StackNavigator = () => (
-  <Stack.Navigator >
-    <Stack.Screen name="Landing" component={LandingScreen} />
+  <Stack.Navigator
+    screenOptions={{
+      headerShown: false
+    }}
+  >
+    <Stack.Screen name="LandingScreen" component={LandingScreen} />
     <Stack.Screen name="BasketScreen" component={BasketScreen} />
   </Stack.Navigator>
 );
 
-
 export default function App() {
   return (
-    <NavigationContainer >
+    <NavigationContainer>
       <StackNavigator></StackNavigator>
     </NavigationContainer>
   );
