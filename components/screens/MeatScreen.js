@@ -65,10 +65,14 @@ const MeatScreen = () => {
               style={styles.iconRight}
             />
           </View>
-          <Image
-            source={require("../../assets/cartwhite.png")}
-            style={styles.iconRight}
-          />
+          <TouchableWithoutFeedback
+            onPress={() => navigation.navigate("CheckoutScreen")}
+          >
+            <Image
+              source={require("../../assets/cartwhite.png")}
+              style={styles.iconRight}
+            />
+          </TouchableWithoutFeedback>
         </View>
       </View>
       <View style={styles.threeRows}>

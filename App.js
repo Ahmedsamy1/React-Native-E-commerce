@@ -8,6 +8,7 @@ import ThumbsScreen from "./components/screens/ThumbsScreen";
 import VegetablesScreen from "./components/screens/VegetablesScreen";
 import MeatScreen from "./components/screens/MeatScreen";
 import ProductDetailsScreen from "./components/screens/ProductDetailsScreen";
+import CheckoutScreen from "./components/screens/CheckoutScreen";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -28,6 +29,7 @@ const StackNavigator = () => (
     <Stack.Screen name="VegetablesScreen" component={VegetablesScreen} />
     <Stack.Screen name="MeatScreen" component={MeatScreen} />
     <Stack.Screen name="ProductDetailsScreen" component={ProductDetailsScreen} />
+    <Stack.Screen name="CheckoutScreen" component={CheckoutScreen} />
   </Stack.Navigator>
 );
 

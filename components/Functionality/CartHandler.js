@@ -6,7 +6,7 @@ const getCart = () => {
 };
 
 const addCart = (obj) => {
-  total += obj.price;
+  total = total + obj.amount * parseInt(obj.price.replace("LE", ""));
   for (let index = 0; index < cart.length; index++) {
     if (obj.name === cart[index].name) {
       cart[index].amount = cart[index].amount + obj.amount;
