@@ -7,8 +7,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect } from "react";
-
-const win = Dimensions.get("window");
+import { addCart } from "../Functionality/CartHandler";
 
 const ProductDetailsScreen = ({ route }) => {
   const navigation = useNavigation();
@@ -36,12 +35,12 @@ const ProductDetailsScreen = ({ route }) => {
         <TouchableWithoutFeedback
           onPress={() => navigation.navigate("MeatScreen")}
         >
-            <View style={styles.largerIcon}>
-
-          <Image
-            source={require("../../assets/arrowleftblue.png")}
-            style={styles.iconLeft}
-          /></View>
+          <View style={styles.largerIcon}>
+            <Image
+              source={require("../../assets/arrowleftblue.png")}
+              style={styles.iconLeft}
+            />
+          </View>
         </TouchableWithoutFeedback>
         <Text style={styles.pageHeader}>Product Details</Text>
         <View style={styles.rightIcons}>
@@ -111,7 +110,16 @@ const ProductDetailsScreen = ({ route }) => {
           reprehenderit aut illum eum dolorum. Dolorem.
         </Text>
       </View>
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          addCart({
+              name: route.params.name,
+            price: route.params.price,
+            amount,
+          });
+          navigation.navigate("MeatScreen");
+        }}
+      >
         <Text style={styles.btn}>ADD TO CART</Text>
       </TouchableWithoutFeedback>
     </View>
@@ -202,7 +210,7 @@ const styles = StyleSheet.create({
     borderLeftWidth: 1,
     borderBottomColor: "#dbdbdb",
     borderBottomWidth: 1,
-    padding: 5,
+    paddingRight: 5,
   },
   qtyText: {
     marginRight: "auto",

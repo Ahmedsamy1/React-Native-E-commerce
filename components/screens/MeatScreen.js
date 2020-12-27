@@ -50,11 +50,12 @@ const MeatScreen = () => {
         <TouchableWithoutFeedback
           onPress={() => navigation.navigate("VegetablesScreen")}
         >
-            <View style={styles.largerIcon}>
-          <Image
-            source={require("../../assets/arrowleft.png")}
-            style={styles.iconLeft}
-          /></View>
+          <View style={styles.largerIcon}>
+            <Image
+              source={require("../../assets/arrowleft.png")}
+              style={styles.iconLeft}
+            />
+          </View>
         </TouchableWithoutFeedback>
         <Text style={styles.pageHeader}>Meat & Seafood</Text>
         <View style={styles.rightIcons}>
@@ -72,43 +73,43 @@ const MeatScreen = () => {
       </View>
       <View style={styles.threeRows}>
         <View style={styles.row}>
-          <View style={styles.leftColumn}>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                navigation.navigate("ProductDetailsScreen", {
-                  uri: getImage(0),
-                  price: getPrice(0),
-                  name: getName(0),
-                })
-              }
-            >
+          <TouchableWithoutFeedback
+            onPress={() =>
+              navigation.navigate("ProductDetailsScreen", {
+                uri: getImage(0),
+                price: getPrice(0),
+                name: getName(0),
+              })
+            }
+          >
+            <View style={styles.leftColumn}>
               <Image
                 source={images.length > 0 ? { uri: getImage(0) } : {}}
                 style={styles.rowImage}
               />
-            </TouchableWithoutFeedback>
-            <View style={styles.imageText}>
-              <View style={styles.leftText}>
-                <Text>{images.length > 0 && getName(0)}</Text>
-                <Text>1KG</Text>
-                <Text>{images.length > 0 && getPrice(0)}</Text>
-              </View>
-              <View style={styles.rightText}>
-                <View>
-                  <Image
-                    source={require("../../assets/circle.png")}
-                    style={styles.circleLeft}
-                  />
-                  <View style={styles.arrowContainer}>
+              <View style={styles.imageText}>
+                <View style={styles.leftText}>
+                  <Text>{images.length > 0 && getName(0)}</Text>
+                  <Text>1KG</Text>
+                  <Text>{images.length > 0 && getPrice(0)}</Text>
+                </View>
+                <View style={styles.rightText}>
+                  <View>
                     <Image
-                      source={require("../../assets/addicon.png")}
-                      style={styles.arrow}
+                      source={require("../../assets/circle.png")}
+                      style={styles.circleLeft}
                     />
+                    <View style={styles.arrowContainer}>
+                      <Image
+                        source={require("../../assets/addicon.png")}
+                        style={styles.arrow}
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
             </View>
-          </View>
+          </TouchableWithoutFeedback>
           <View style={styles.rightColumn}>
             <TouchableWithoutFeedback
               onPress={() =>
@@ -148,156 +149,157 @@ const MeatScreen = () => {
           </View>
         </View>
         <View style={styles.row}>
-          <View style={styles.leftColumn}>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                navigation.navigate("ProductDetailsScreen", {
-                  uri: getImage(2),
-                  price: getPrice(2),
-                  name: getName(2),
-                })
-              }
-            >
+          <TouchableWithoutFeedback
+            onPress={() =>
+              navigation.navigate("ProductDetailsScreen", {
+                uri: getImage(2),
+                price: getPrice(2),
+                name: getName(2),
+              })
+            }
+          >
+            <View style={styles.leftColumn}>
               <Image
                 source={images.length > 0 ? { uri: getImage(2) } : {}}
                 style={styles.rowImage}
               />
-            </TouchableWithoutFeedback>
-            <View style={styles.imageText}>
-              <View style={styles.leftText}>
-                <Text>{images.length > 0 && getName(2)}</Text>
-                <Text>1KG</Text>
-                <Text>EGP {images.length > 0 && getPrice(2)}</Text>
-              </View>
-              <View style={styles.rightText}>
-                <View>
-                  <Image
-                    source={require("../../assets/circle.png")}
-                    style={styles.circleLeft}
-                  />
-                  <View style={styles.arrowContainer}>
+              <View style={styles.imageText}>
+                <View style={styles.leftText}>
+                  <Text>{images.length > 0 && getName(2)}</Text>
+                  <Text>1KG</Text>
+                  <Text>EGP {images.length > 0 && getPrice(2)}</Text>
+                </View>
+                <View style={styles.rightText}>
+                  <View>
                     <Image
-                      source={require("../../assets/addicon.png")}
-                      style={styles.arrow}
+                      source={require("../../assets/circle.png")}
+                      style={styles.circleLeft}
                     />
+                    <View style={styles.arrowContainer}>
+                      <Image
+                        source={require("../../assets/addicon.png")}
+                        style={styles.arrow}
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
             </View>
-          </View>
-          <View style={styles.rightColumn}>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                navigation.navigate("ProductDetailsScreen", {
-                  uri: getImage(3),
-                  price: getPrice(3),
-                  name: getName(3),
-                })
-              }
-            >
+          </TouchableWithoutFeedback>
+
+          <TouchableWithoutFeedback
+            onPress={() =>
+              navigation.navigate("ProductDetailsScreen", {
+                uri: getImage(3),
+                price: getPrice(3),
+                name: getName(3),
+              })
+            }
+          >
+            <View style={styles.rightColumn}>
               <Image
                 source={images.length > 0 ? { uri: getImage(3) } : {}}
                 style={styles.rowImage}
               />
-            </TouchableWithoutFeedback>
-            <View style={styles.imageText}>
-              <View style={styles.leftText}>
-                <Text>{images.length > 0 && getName(3)}</Text>
-                <Text>1KG</Text>
-                <Text>{images.length > 0 && getPrice(3)}</Text>
-              </View>
-              <View style={styles.rightText}>
-                <View>
-                  <Image
-                    source={require("../../assets/circle.png")}
-                    style={styles.circleLeft}
-                  />
-                  <View style={styles.arrowContainer}>
+              <View style={styles.imageText}>
+                <View style={styles.leftText}>
+                  <Text>{images.length > 0 && getName(3)}</Text>
+                  <Text>1KG</Text>
+                  <Text>{images.length > 0 && getPrice(3)}</Text>
+                </View>
+                <View style={styles.rightText}>
+                  <View>
                     <Image
-                      source={require("../../assets/addicon.png")}
-                      style={styles.arrow}
+                      source={require("../../assets/circle.png")}
+                      style={styles.circleLeft}
                     />
+                    <View style={styles.arrowContainer}>
+                      <Image
+                        source={require("../../assets/addicon.png")}
+                        style={styles.arrow}
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
             </View>
-          </View>
+          </TouchableWithoutFeedback>
         </View>
         <View style={styles.row}>
-          <View style={styles.leftColumn}>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                navigation.navigate("ProductDetailsScreen", {
-                  uri: getImage(0),
-                  price: getPrice(0),
-                  name: getName(0),
-                })
-              }
-            >
+          <TouchableWithoutFeedback
+            onPress={() =>
+              navigation.navigate("ProductDetailsScreen", {
+                uri: getImage(0),
+                price: getPrice(0),
+                name: getName(0),
+              })
+            }
+          >
+            <View style={styles.leftColumn}>
               <Image
                 source={images.length > 0 ? { uri: getImage(0) } : {}}
                 style={styles.rowImage}
               />
-            </TouchableWithoutFeedback>
-            <View style={styles.imageText}>
-              <View style={styles.leftText}>
-                <Text>{images.length > 0 && getName(0)}</Text>
-                <Text>1KG</Text>
-                <Text>{images.length > 0 && getPrice(0)}</Text>
-              </View>
-              <View style={styles.rightText}>
-                <View>
-                  <Image
-                    source={require("../../assets/circle.png")}
-                    style={styles.circleLeft}
-                  />
-                  <View style={styles.arrowContainer}>
+              <View style={styles.imageText}>
+                <View style={styles.leftText}>
+                  <Text>{images.length > 0 && getName(0)}</Text>
+                  <Text>1KG</Text>
+                  <Text>{images.length > 0 && getPrice(0)}</Text>
+                </View>
+                <View style={styles.rightText}>
+                  <View>
                     <Image
-                      source={require("../../assets/addicon.png")}
-                      style={styles.arrow}
+                      source={require("../../assets/circle.png")}
+                      style={styles.circleLeft}
                     />
+                    <View style={styles.arrowContainer}>
+                      <Image
+                        source={require("../../assets/addicon.png")}
+                        style={styles.arrow}
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
             </View>
-          </View>
-          <View style={styles.rightColumn}>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                navigation.navigate("ProductDetailsScreen", {
-                  uri: getImage(1),
-                  price: getPrice(1),
-                  name: getName(1),
-                })
-              }
-            >
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+            onPress={() =>
+              navigation.navigate("ProductDetailsScreen", {
+                uri: getImage(1),
+                price: getPrice(1),
+                name: getName(1),
+              })
+            }
+          >
+            <View style={styles.rightColumn}>
               <Image
                 source={images.length > 0 ? { uri: getImage(1) } : {}}
                 style={styles.rowImage}
               />
-            </TouchableWithoutFeedback>
-            <View style={styles.imageText}>
-              <View style={styles.leftText}>
-                <Text>{images.length > 0 && getName(1)}</Text>
-                <Text>1KG</Text>
-                <Text>{images.length > 0 && getPrice(1)}</Text>
-              </View>
-              <View style={styles.rightText}>
-                <View>
-                  <Image
-                    source={require("../../assets/circle.png")}
-                    style={styles.circleLeft}
-                  />
-                  <View style={styles.arrowContainer}>
+              <View style={styles.imageText}>
+                <View style={styles.leftText}>
+                  <Text>{images.length > 0 && getName(1)}</Text>
+                  <Text>1KG</Text>
+                  <Text>{images.length > 0 && getPrice(1)}</Text>
+                </View>
+                <View style={styles.rightText}>
+                  <View>
                     <Image
-                      source={require("../../assets/addicon.png")}
-                      style={styles.arrow}
+                      source={require("../../assets/circle.png")}
+                      style={styles.circleLeft}
                     />
+                    <View style={styles.arrowContainer}>
+                      <Image
+                        source={require("../../assets/addicon.png")}
+                        style={styles.arrow}
+                      />
+                    </View>
                   </View>
                 </View>
               </View>
             </View>
-          </View>
+          </TouchableWithoutFeedback>
         </View>
       </View>
       <View style={styles.buttonsContainer}>

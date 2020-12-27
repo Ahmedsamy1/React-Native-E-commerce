@@ -8,7 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const BasketScreen = () => {
   const navigation = useNavigation();
-
+  
   return (
     <View style={styles.container}>
       <Image source={require("../../assets/basket.png")} style={styles.image} />
