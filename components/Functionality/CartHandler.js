@@ -1,4 +1,5 @@
 const cart = [];
+
 let total = 0;
 
 const getCart = () => {

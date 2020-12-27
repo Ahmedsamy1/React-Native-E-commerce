@@ -1,10 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-import {
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
+import { TouchableWithoutFeedback } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Dimensions } from "react-native";
 import getImagesAPI from "../api/imageapi";

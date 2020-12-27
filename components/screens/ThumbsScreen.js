@@ -1,9 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import {
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback,
-} from "react-native-gesture-handler";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
 const ThumbsScreen = () => {
@@ -89,7 +86,7 @@ const styles = StyleSheet.create({
   paragraph: {
     textAlign: "center",
     paddingTop: 20,
-    lineHeight: 25
+    lineHeight: 25,
   },
   bottomRow: {
     flexDirection: "row",
@@ -111,7 +108,7 @@ const styles = StyleSheet.create({
   },
   threedots: {
     height: 14,
-    resizeMode: "contain"
+    resizeMode: "contain",
   },
   arrowContainer: {
     position: "absolute",
@@ -120,13 +117,13 @@ const styles = StyleSheet.create({
     right: 0,
     bottom: 0,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   arrow: {
     height: 14,
     width: 7,
   },
   startedText: {
-    color: '#fff'
-  }
+    color: "#fff",
+  },
 });

@@ -1,10 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import {
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { TouchableWithoutFeedback } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import getImagesAPI from "../api/imageapi";
@@ -51,6 +48,16 @@ const VegetablesScreen = () => {
             source={require("../../assets/vegetables.png")}
             style={styles.mainImage}
           />
+          <View style={styles.imageHeaderContainer}>
+            <Text style={styles.imageHeader1}>20%</Text>
+            <Text style={styles.imageHeader2}>Discount</Text>
+          </View>
+          <View style={styles.dotsMiddle}>
+            <Image
+              source={require("../../assets/dotsmiddle.png")}
+              style={styles.dotsImage}
+            />
+          </View>
         </View>
       </TouchableWithoutFeedback>
       <View style={styles.threeRows}>
@@ -69,6 +76,7 @@ const VegetablesScreen = () => {
             source={require("../../assets/pineapple.png")}
             style={styles.secondRowImage}
           />
+          <Text style={styles.pineappleText}>Lorem ipsum</Text>
         </View>
         <View style={styles.thirdRow}>
           <Image
@@ -153,5 +161,33 @@ const styles = StyleSheet.create({
   thirdRowImageTwo: {
     width: 160,
     height: 160,
+  },
+  imageHeaderContainer: {
+    position: "absolute",
+    top: "30%",
+    left: "10%",
+  },
+  imageHeader1: {
+    fontSize: 48,
+    color: "#fff",
+  },
+  imageHeader2: {
+    fontSize: 20,
+    color: "#fff",
+  },
+  dotsMiddle: {
+    position: "absolute",
+    top: 230,
+    left: 130,
+  },
+  dotsImage: {
+    height: 14,
+    resizeMode: "contain",
+  },
+  pineappleText: {
+    position: "absolute",
+    top: 36,
+    left: 35,
+    fontSize: 16,
   },
 });

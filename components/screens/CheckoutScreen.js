@@ -1,12 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import {
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { TouchableWithoutFeedback } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { getTotal } from "../Functionality/CartHandler";
 import { Dimensions } from "react-native";
+
+import { getTotal } from "../Functionality/CartHandler";
 
 const win = Dimensions.get("window");
 
@@ -86,14 +84,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "red",
-    marginLeft:'auto',
-    marginRight:'auto',
+    marginLeft: "auto",
+    marginRight: "auto",
     marginTop: 30,
     paddingTop: 10,
-    paddingBottom: 10,borderRadius: 10
+    paddingBottom: 10,
+    borderRadius: 10,
   },
   checkoutText: {
-      color:'#fff',
-    fontSize: 24
-  }
+    color: "#fff",
+    fontSize: 24,
+  },
 });

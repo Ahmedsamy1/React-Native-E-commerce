@@ -1,9 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import {
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { TouchableWithoutFeedback } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const VanScreen = () => {
@@ -92,7 +89,7 @@ const styles = StyleSheet.create({
   paragraph: {
     textAlign: "center",
     paddingTop: 20,
-    lineHeight: 25
+    lineHeight: 25,
   },
   bottomRow: {
     flexDirection: "row",

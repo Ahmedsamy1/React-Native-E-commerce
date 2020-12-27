@@ -1,14 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import {
-  TouchableNativeFeedback,
-  TouchableWithoutFeedback,
-} from "react-native-gesture-handler";
+import { TouchableWithoutFeedback } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const BasketScreen = () => {
   const navigation = useNavigation();
-  
+
   return (
     <View style={styles.container}>
       <Image source={require("../../assets/basket.png")} style={styles.image} />
@@ -39,7 +36,9 @@ const BasketScreen = () => {
           source={require("../../assets/threedots.png")}
           style={styles.threedots}
         />
-        <TouchableWithoutFeedback onPress={() => navigation.navigate("VanScreen")}>
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate("VanScreen")}
+        >
           <View>
             <Image
               source={require("../../assets/circle.png")}
@@ -85,7 +84,7 @@ const styles = StyleSheet.create({
   paragraph: {
     textAlign: "center",
     paddingTop: 20,
-    lineHeight: 25
+    lineHeight: 25,
   },
   bottomRow: {
     flexDirection: "row",
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     resizeMode: "contain",
-    opacity: 0
+    opacity: 0,
   },
   circleRight: {
     height: 50,

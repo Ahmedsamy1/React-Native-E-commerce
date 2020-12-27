@@ -8,7 +8,9 @@ const LandingScreen = () => {
 
   return (
     <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={() => navigation.navigate("BasketScreen")}>
+      <TouchableWithoutFeedback
+        onPress={() => navigation.navigate("BasketScreen")}
+      >
         <View style={styles.container2}>
           <Image source={require("../../assets/mask.png")} />
         </View>
