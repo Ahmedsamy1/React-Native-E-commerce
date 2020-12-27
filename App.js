@@ -12,6 +12,7 @@ import ProductDetailsScreen from "./components/screens/ProductDetailsScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
+
 const Stack = createStackNavigator();
 
 const StackNavigator = () => (
@@ -24,7 +25,7 @@ const StackNavigator = () => (
     <Stack.Screen name="BasketScreen" component={BasketScreen} />
     <Stack.Screen name="VanScreen" component={VanScreen} />
     <Stack.Screen name="ThumbsScreen" component={ThumbsScreen} />
-    <Stack.Screen name="VegatablesScreen" component={VegetablesScreen} />
+    <Stack.Screen name="VegetablesScreen" component={VegetablesScreen} />
     <Stack.Screen name="MeatScreen" component={MeatScreen} />
     <Stack.Screen name="ProductDetailsScreen" component={ProductDetailsScreen} />
   </Stack.Navigator>

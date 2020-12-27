@@ -1,25 +1,49 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { Dimensions } from "react-native";
 import {
   TouchableNativeFeedback,
   TouchableWithoutFeedback,
-} from "react-native-gesture-handler";
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Dimensions } from "react-native";
+import { useState, useEffect } from "react";
 
 const win = Dimensions.get("window");
 
-const VegetablesScreen = () => {
+const ProductDetailsScreen = ({ route }) => {
   const navigation = useNavigation();
+
+  const [amount, setAmount] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  const addOne = (price) => {
+    price = price.replace("LE", "");
+    setAmount(amount + 1);
+  };
+
+  const reduceOne = (price) => {
+    price = price.replace("LE", "");
+    amount > 0 && setAmount(amount - 1);
+  };
+
+  useEffect(() => {
+    setTotal(amount * parseInt(route.params.price));
+  }, [amount]);
 
   return (
     <View style={styles.container}>
       <View style={styles.iconsContainer}>
-        <Image
-          source={require("../../assets/arrowleftblue.png")}
-          style={styles.iconLeft}
-        />
-        <Text style={styles.pageHeader}>Lorem ipsum</Text>
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate("MeatScreen")}
+        >
+            <View style={styles.largerIcon}>
+
+          <Image
+            source={require("../../assets/arrowleftblue.png")}
+            style={styles.iconLeft}
+          /></View>
+        </TouchableWithoutFeedback>
+        <Text style={styles.pageHeader}>Product Details</Text>
         <View style={styles.rightIcons}>
           <View>
             <Image
@@ -36,33 +60,48 @@ const VegetablesScreen = () => {
       <View style={styles.contentContainer}>
         <View style={styles.imageContaienr}>
           <Image
-            source={require("../../assets/meatsmall.jpg")}
+            source={{ uri: route.params.uri }}
             style={styles.productImage}
           />
           <View style={styles.textContaienr}>
-            <Text style={[styles.text, styles.textFirst]}>Lorem ipsum</Text>
+            <Text style={[styles.text, styles.textFirst]}>
+              {route.params.name}
+            </Text>
             <Text style={[styles.text, styles.textSecond]}>1KG</Text>
-            <Text style={[styles.text, styles.textThird]}>EGP 350</Text>
+            <Text style={[styles.text, styles.textThird]}>
+              {" "}
+              {route.params.price}
+            </Text>
           </View>
         </View>
       </View>
       <View style={styles.description}>
         <Text style={[styles.textFirst, styles.qtyText]}>QTY</Text>
         <View style={styles.qtyGroup}>
-          <Image
-            style={styles.qtyImagesFirst}
-            source={require("../../assets/addiconblack.png")}
-          />
-          <Text style={styles.qtyAmount}>3</Text>
-          <Image
-            style={styles.qtyImagesSecond}
-            source={require("../../assets/minusiconblack.png")}
-          />
+          <TouchableNativeFeedback
+            onPress={() => reduceOne(route.params.price)}
+          >
+            <View style={styles.largerIcon}>
+              <Image
+                style={styles.qtyImagesSecond}
+                source={require("../../assets/minusiconblack.png")}
+              />
+            </View>
+          </TouchableNativeFeedback>
+          <Text style={styles.qtyAmount}>{amount}</Text>
+          <TouchableNativeFeedback onPress={() => addOne(route.params.price)}>
+            <View style={styles.largerIcon}>
+              <Image
+                style={styles.qtyImagesFirst}
+                source={require("../../assets/addiconblack.png")}
+              />
+            </View>
+          </TouchableNativeFeedback>
         </View>
       </View>
       <View style={styles.description}>
         <Text style={[styles.textFirst, styles.qtyText]}>Total</Text>
-        <Text style={[styles.textFirst, styles.orangeText]}>EGP 700</Text>
+        <Text style={[styles.textFirst, styles.orangeText]}>EGP {total}</Text>
       </View>
       <View>
         <Text style={styles.descriptionText}>
@@ -79,7 +118,7 @@ const VegetablesScreen = () => {
   );
 };
 
-export default VegetablesScreen;
+export default ProductDetailsScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -197,5 +236,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     fontSize: 20,
     borderRadius: 5,
+  },
+  largerIcon: {
+    alignItems: "center",
+    justifyContent: "center",
+    height: 30,
+    width: 30,
   },
 });

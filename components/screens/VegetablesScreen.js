@@ -1,13 +1,29 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import {
   TouchableNativeFeedback,
   TouchableWithoutFeedback,
-} from "react-native-gesture-handler";
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
+
+import getImagesAPI from "../api/imageapi";
 
 const VegetablesScreen = () => {
   const navigation = useNavigation();
+
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    loadImages();
+  }, []);
+
+  const loadImages = async () => {
+    const response = await getImagesAPI.getImages();
+    setImages(response.data);
+  };
+
+  const getImage = (number) => images[0].products[number].product_img;
 
   return (
     <View style={styles.container}>
@@ -40,11 +56,11 @@ const VegetablesScreen = () => {
       <View style={styles.threeRows}>
         <View style={styles.firstRow}>
           <Image
-            source={require("../../assets/buffet.png")}
+            source={images.length > 0 ? { uri: getImage(0) } : {}}
             style={styles.firstRowImageOne}
           />
           <Image
-            source={require("../../assets/dish.png")}
+            source={images.length > 0 ? { uri: getImage(1) } : {}}
             style={styles.firstRowImageTwo}
           />
         </View>
@@ -56,11 +72,11 @@ const VegetablesScreen = () => {
         </View>
         <View style={styles.thirdRow}>
           <Image
-            source={require("../../assets/oranges.png")}
+            source={images.length > 0 ? { uri: getImage(2) } : {}}
             style={styles.thirdRowImageOne}
           />
           <Image
-            source={require("../../assets/strawberry.png")}
+            source={images.length > 0 ? { uri: getImage(3) } : {}}
             style={styles.thirdRowImageTwo}
           />
         </View>

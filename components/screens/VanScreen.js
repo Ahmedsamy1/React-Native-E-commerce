@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import {
   TouchableNativeFeedback,
   TouchableWithoutFeedback,
-} from "react-native-gesture-handler";
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const VanScreen = () => {
