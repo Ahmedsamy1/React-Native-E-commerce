@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, Button } from "react-native";
 import {
   TouchableNativeFeedback,
   TouchableWithoutFeedback,
-} from "react-native-gesture-handler";
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Dimensions } from "react-native";
 
@@ -210,9 +210,13 @@ const VegetablesScreen = () => {
         </View>
       </View>
       <View style={styles.buttonsContainer}>
-        <Text title="Learn More" style={styles.buttonLeft}>
-          Sort By
-        </Text>
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate("ProductDetailsScreen")}
+        >
+          <Text title="Learn More" style={styles.buttonLeft}>
+            Sort By
+          </Text>
+        </TouchableWithoutFeedback>
         <Text title="Learn More" style={styles.buttonRight}>
           Filter
         </Text>
